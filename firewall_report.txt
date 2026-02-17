@@ -1,0 +1,75 @@
+FIREWALL CONFIGURATION REPORT
+
+Objective:
+To configure and test basic firewall rules on Ubuntu Linux using UFW (Uncomplicated Firewall) to allow or block network traffic.
+
+Tool Used:
+UFW (Uncomplicated Firewall) on Ubuntu Linux
+
+System:
+Ubuntu Linux
+
+Steps Performed:
+
+1. Checked Firewall Status
+Command Used:
+sudo ufw status
+Result:
+Verified firewall status.
+
+--------------------------------------------------
+
+2. Enabled Firewall
+Command Used:
+sudo ufw enable
+Result:
+Firewall activated successfully.
+
+--------------------------------------------------
+
+3. Blocked Telnet Port (23)
+Command Used:
+sudo ufw deny 23
+Result:
+Inbound traffic on port 23 blocked.
+
+--------------------------------------------------
+
+4. Allowed SSH Port (22)
+Command Used:
+sudo ufw allow 22
+Result:
+SSH traffic allowed.
+
+--------------------------------------------------
+
+5. Tested Firewall Rule
+Command Used:
+telnet localhost 23
+Result:
+Connection refused — proves firewall blocked the port.
+
+--------------------------------------------------
+
+6. Removed Test Rule
+Command Used:
+sudo ufw delete deny 23
+Result:
+Test rule removed and system restored.
+
+--------------------------------------------------
+
+Findings:
+The firewall successfully filtered traffic based on rules. Port 23 was blocked and SSH access was allowed.
+
+Conclusion:
+UFW firewall effectively controls network traffic and helps protect the system from unauthorized access.
+
+Learning Outcome:
+- Learned how to enable and manage firewall rules
+- Understood how to block and allow ports
+- Practiced testing firewall rules
+- Gained basic firewall management skills
+
+Ethical Note:
+This firewall configuration was performed on my own system for educational purposes only.
